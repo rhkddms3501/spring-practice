@@ -5,9 +5,9 @@
 		<artifactId>spring-practice</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>hellospring</artifactId>
+	<artifactId>emaillist03</artifactId>
 	<packaging>war</packaging>
-
+	
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.build.outputEncoding>UTF-8</project.build.outputEncoding>
@@ -40,6 +40,20 @@
 		    <version>${org.springframewok-version}</version>
 		</dependency>
 		
+		<!-- jstl -->
+		<dependency>
+			<groupId>jstl</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+		
+		<!-- MariaDB JDBC Driver -->
+		<dependency>
+			<groupId>org.mariadb.jdbc</groupId>
+			<artifactId>mariadb-java-client</artifactId>
+			<version>3.0.8</version>
+		</dependency>
+		
 		<!-- servlet -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -56,7 +70,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>hellospring</finalName>
+		<finalName>emaillist03</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
