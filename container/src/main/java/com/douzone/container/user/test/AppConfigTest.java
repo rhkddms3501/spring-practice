@@ -10,15 +10,17 @@ import com.douzone.container.user.User;
 public class AppConfigTest {
 
 	public static void main(String[] args) {
-		testAppConfig01();
+		testAppConfig();
 	}
 
-	private static void testAppConfig01() {
+	private static void testAppConfig() {
 		ApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
+		
 		User user = ac.getBean(User.class);
 		System.out.println(user);
 		
 		Friend friend = ac.getBean(Friend.class);
 		System.out.println(friend);
 	}
+
 }

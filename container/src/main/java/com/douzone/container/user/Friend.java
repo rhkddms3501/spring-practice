@@ -11,5 +11,4 @@ public class Friend {
 	public String toString() {
 		return "Friend [name=" + name + "]";
 	}
-	
 }

@@ -7,11 +7,11 @@ import org.springframework.context.annotation.Configuration;
 import com.douzone.container.user.Friend;
 
 @Configuration
-@ComponentScan(basePackages = {"com.douzone.container.user"})
+@ComponentScan(basePackages={"com.douzone.container.user"})
 public class AppConfig {
 	
 	@Bean
-	public Friend friend() {
-		return new Friend("짱구");
+	public Friend firend() {
+		return new Friend("Loopy");
 	}
 }

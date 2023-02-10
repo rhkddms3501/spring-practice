@@ -1,5 +1,6 @@
-package containercom.douzone.container.soundsystem;
+package com.douzone.container.soundsystem;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import org.junit.jupiter.api.Test;
@@ -8,10 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-import com.douzone.container.soundsystem.CDPlayer;
-
 @ExtendWith(SpringExtension.class)
-		@ContextConfiguration(locations= {"classpath:com/douzone/container/config/soundsystem/applicationContext.xml"})
+@ContextConfiguration(locations={"classpath:com/douzone/container/config/soundsystem/applicationContext.xml"})
 public class CDPlayerXmlConfigTest {
 
 	@Autowired
@@ -21,4 +20,10 @@ public class CDPlayerXmlConfigTest {
 	public void testCDPlayerNotNull() {
 		assertNotNull(cdPlayer);
 	}
+	
+	@Test
+	public void testPlay() {
+		assertEquals("Playing 붕붕 by 김하온", cdPlayer.play());
+	}
+
 }
