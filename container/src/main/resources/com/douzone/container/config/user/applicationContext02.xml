@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd
+        http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang.xsd
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+        http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd">
+
+	<!-- 기본 생성자로 빈 생성 하기 -->
+	<bean id="user" name="usr" class="com.douzone.container.user.User" />
+
+	<!-- 파라미터 1개인 생성자로 빈 생성 하기 -->
+	<bean id="user2" name="usr2"
+		class="com.douzone.container.user.User">
+		<constructor-arg value="흰둥이" />
+	</bean>
+
+	<!-- 파라미터 1개인 생성자로 빈 생성 하기 1 -->
+	<bean id="user3" name="usr3"
+		class="com.douzone.container.user.User">
+		<constructor-arg value="3" />
+		<constructor-arg value="수지" />
+	</bean>
+
+	<!-- 파라미터 1개인 생성자로 빈 생성 하기 2 -->
+	<bean id="user4" name="usr4"
+		class="com.douzone.container.user.User">
+		<constructor-arg index="1" value="유리" />
+		<constructor-arg index="0" value="4" />
+	</bean>
+	
+	<!-- setter 사용하기 -->
+	<bean id="user5" name="usr5"
+		class="com.douzone.container.user.User">
+		<property name="no" value="5" />
+		<property name="name" value="맹구" />
+	</bean>
+	
+	<!-- DI 하기 -->
+	<bean id="friend" class="com.douzone.container.user.Friend" >
+		<constructor-arg value="훈이" />
+	</bean>
+	<bean id="user6" name="usr6"
+		class="com.douzone.container.user.User">
+		<property name="no" value="6" />
+		<property name="name" value="철수" />
+		<property name="friend" ref="friend" />
+	</bean>
+	
+	<!-- setter를 사용한 List세팅하기 -->
+	<bean id="user7" name="usr7"
+		class="com.douzone.container.user.User">
+		<property name="no" value="7" />
+		<property name="name" value="짱아" />
+		<property name="friends">
+			<list>
+				<value>신형식</value>
+				<value>봉미선</value>
+				<value>채성아</value>
+				<value>나미리</value>
+			</list>
+		</property>
+	</bean>
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
